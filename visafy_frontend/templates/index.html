@@ -1,0 +1,292 @@
+{% set no_index = True %}
+{% set body_class = 'page-template-page-homepage' %}
+{% extends 'base.html' %}
+{% block structured_data %}
+    <script type='application/ld+json'>{"@context":"https://schema.org","@type":"Organization","aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "ratingCount": "{{ review_count }}"},"name":"Visafy","url":"https://visafy.it/","logo":"{{ url_for('static', filename='img/visafy_logo_squared.png', _external=True) }}","foundingDate":"2018","founders":[{"@type":"Person","name":"Angelo Lionetti"},{"@type":"Person","name":"Davide Lionetti"}],"address":{"@type":"PostalAddress","streetAddress":"Via Michele Viterbo, 9/A","addressLocality":"Cassano delle Murge","addressRegion":"BA","postalCode":"70020","addressCountry":"Italy"},"contactPoint":{"@type":"ContactPoint","contactType":"Supporto Clienti","telephone":"+393518943200","email":"info@visafy.it"},"sameAs":["https://www.facebook.com/visafy.it/","https://instagram.com/visafy","https://www.linkedin.com/company/visafy/"]}</script>
+{% endblock %}
+{% block content %}
+<section class="bg--primary height-100" id="atf">
+    <div class="container pos-vertical-center">
+        <div class="row align-items-center">
+            <div class="col-11 mx-auto col-md-7 text-left">
+                <h1>The digital platform to request every kind of consular visa online</h1>
+                <p class="lead">
+                    With {{ brand_text('span', 'd-inline h4') }} you can apply for your consular visa online in our platform, seamlessly from any device, 24/7. Say goodbye to long queues at consulates and bureaucratic procedures, the future of travel starts here.
+                </p>
+                <a class="btn btn--white type--uppercase" href="javascript:;" onclick="openModal('#primary');">
+                    <span class="btn__text">
+                                Apply for a visa
+                            </span>
+                </a>
+            </div>
+            <div class="col-md-5 hidden-xs text-right">
+                <img src="{{ url_for('static', filename='img/italian-passport.png') }}" class="box-shadow-wide border--round passport">
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+{#<section class="text-center cta cta-4 space--xxs border--bottom bg--secondary">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-md-12 text-justify text-lg-center">#}
+{#                <a href="{{ url_for('can_you_travel') }}" target="_blank">#}
+{#                    <span class="color--dark">La maggior parte dei Paesi del mondo hanno adottato misure restrittive sui viaggi in risposta all’emergenza sanitaria causata da COVID-19.<br>Per maggiori informazioni, visita il portale <span class="color--primary">Dove si può viaggiare?</span> realizzato da {{ brand_text('span','d-inline color--primary') }}.</span>#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <!--end of row-->#}
+{#    </div>#}
+{#    <!--end of container-->#}
+{#</section>#}
+<section class="text-center bg--white space--sm">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h2>Your consular visa with {{ brand_text('span', 'color--primary') }}</h2>
+                <p class="lead">
+                    Travelling for business or for leisure, {{ brand_text('span', 'color--primary') }} is your best bet for your consular visa.
+                </p>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="text-center unpad--top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature feature-6">
+                    <i class="icon icon--lg icon-Tie color--primary"></i>
+                    <h4>Professional advice</h4>
+                    <p>
+                        Thanks to the extensive knowledge of our visa experts, we'll identify the best solution for your needs.
+                    </p>
+                </div>
+                <!--end feature-->
+            </div>
+            <div class="col-md-4">
+                <div class="feature feature-6">
+                    <i class="icon icon--lg icon-Running color--primary"></i>
+                    <h4>Fast</h4>
+                    <p>
+                        Our online platform enables you to get your visa in times never seen before.
+                    </p>
+                </div>
+                <!--end feature-->
+            </div>
+            <div class="col-md-4">
+                <div class="feature feature-6">
+                    <i class="icon icon--lg icon-Superman color--primary"></i>
+                    <h4>A bit <span class="type--bold">Superman</span></h4>
+                    <p>
+                        ... because, let's face it, unexpected events need a Superman-like sprint. And we started to get used to it!
+                    </p>
+                </div>
+                <!--end feature-->
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="cover height-50 bg--primary imagebg text-center parallax" data-overlay="7">
+<div class="background-image-holder">
+    <img src="{{ url_for('static', filename='img/travel-relax.jpeg') }}" alt="">
+</div>
+<div class="container pos-vertical-center">
+    <div class="row">
+        <div class="col-8 col-sm-12">
+            <div class="cta">
+                <h2>Your perfect trip starts here.</h2>
+                <span class="lead d-block">
+                        Enjoy
+                        <div class="typed-headline d-inline">
+                            <span class="typed-text typed-text--cursor"
+                                  data-typed-strings="your business trip., your holiday., your studies abroad."></span>
+                        </div>
+                    </span>
+                <a class="btn btn--white type--uppercase" href="javascript:;" onclick="openModal('#primary')">
+                                <span class="btn__text">
+                                    Apply for a visa
+                                </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--end of row-->
+</div>
+<!--end of container-->
+</section>
+<section class="text-center bg--white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h2>How {{ brand_text('span','h4 d-inline color--primary') }} works</h2>
+                <p class="lead">
+                    Your visa in 3 simple steps
+                </p>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="bg--white unpad--top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <ol class="process-3">
+                    <li class="process_item">
+                        <div class="process__number">
+                            <span><i class="icon-Internet color--primary"></i></span>
+                        </div>
+                        <div class="process__body">
+                            <h3 class="mb-2">Apply for a consular visa online</h3>
+                            <p>
+                                Apply for a consular visa for your destination with {{ brand_text('span','type--bold color--primary') }} entirely online.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="process_item">
+                        <div class="process__number">
+                            <span><i class="icon-ID-2 color--primary"></i></span>
+                        </div>
+                        <div class="process__body">
+                            <h3 class="mb-2">Have your documents ready</h3>
+                            <p>
+                                Required documents will be picked up from your place and we'll take care of the rest, while you can enjoy your favourite tea
+                                <span
+                                    class="h3 d-inline"><i class="icon-Tee-Mug color--primary type--bold"></i></span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="process_item">
+                        <div class="process__number">
+                            <span><i class="icon-Bird-DeliveringLetter color--primary"></i></span>
+                        </div>
+                        <div class="process__body">
+                            <h3 class="mb-2">Receive your consular visa</h3>
+                            <p>
+                                Your passport with your visa will either be shipped back to your place or ready to be collected in one of our seats.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="text-center unpad--top bg--white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="cta">
+                    <a class="btn btn--primary type--uppercase" href="javascript:;" onclick="openModal('#primary')">
+                        <span class="btn__text">
+                            Apply for a visa
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="text-center space-bottom--sm bg--secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+                <h2>Most requested visas</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text-center unpad--top bg--secondary" id="most-requested-visas">
+    <div class="container">
+        <div class="row">
+            {% set featured_visas = [
+                ('United States (USA)','stati-uniti-usa', ''),
+                ('Russia','russia', ''),
+                ('China','cina', ''),
+                ('Australia','australia', ''),
+                ('Thailand','thailandia', ''),
+                ('United Kingdom (UK)','regno-unito-uk', ''),
+            ] %}
+            {% for country, url_slug, iso2 in featured_visas %}
+                <div class="col-12 col-md-6 col-lg-4 mx-auto{% if loop.index > 3 %} hidden-xs{% endif %}">
+                    <a class="card-link" href="javascript:;" onclick="openTypeform('kaqyFaon', {'country_iso': '{{ iso2 }}', 'country_name': '{{ country }}', 'sid': sid});">
+{#                    <a class="card-link" href="{{ url_for('frontend_visa_page', country_slug=slug) }}">#}
+                        <div class="imagebg boxed mb-4 hover-effect bg--primary" data-overlay="5">
+                            <div class="background-image-holder">
+                                <img src="{{ url_for('static', filename='img/'+url_slug+'-350.jpg') }}" alt="">
+                            </div>
+                            <h2 class="m-0 py-5 h3">{{ country }} visa</h2>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{#<section class="text-center space-bottom--sm">#}
+{#    <div class="container">#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-md-10 col-lg-8">#}
+{#                <h2>Team</h2>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{#<section class="text-center" id="team">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-md-6 mb-5 mb-md-0">#}
+{#                <img src="{{ url_for('static', filename='img/angelo_lionetti_visafy.jpg') }}"#}
+{#                     class="border--round box-shadow-wide">#}
+{#                <h5 class="mb-0">Angelo Lionetti</h5>#}
+{#                <span>Founder &amp; CEO</span>#}
+{#                <ul class="social-list list-inline text-center-xs d-block mt-2">#}
+{#                    <li>#}
+{#                        <a href="https://www.linkedin.com/in/angelo-lionetti-9733253b/" target="_blank">#}
+{#                            <i class="socicon socicon-linkedin icon icon--xs color--primary"></i>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            <div class="col-md-6">#}
+{#                <img src="{{ url_for('static', filename='img/davide_lionetti_visafy.jpg') }}"#}
+{#                     class="border--round box-shadow-wide">#}
+{#                <h5 class="mb-0">Davide Lionetti</h5>#}
+{#                <span>Co-Founder &amp; Business Development Manager</span>#}
+{#                <ul class="social-list list-inline text-center-xs d-block mt-2">#}
+{#                    <li>#}
+{#                        <a href="https://linkedin.com/in/davidelionetti/" target="_blank">#}
+{#                            <i class="socicon socicon-linkedin icon icon--xs color--primary"></i>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="https://facebook.com/davidelionettii" target="_blank">#}
+{#                            <i class="socicon socicon-facebook icon icon--xs color--primary"></i>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="https://instagram.com/davidelionetti" target="_blank">#}
+{#                            <i class="socicon socicon-instagram icon icon--xs color--primary"></i>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#        <!--end of row-->#}
+{#    </div>#}
+{#    <!--end of container-->#}
+{#</section>#}
+
+{% include 'includes/clients.html' %}
+{% endblock %}

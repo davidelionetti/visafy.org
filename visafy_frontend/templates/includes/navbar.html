@@ -1,0 +1,88 @@
+<div class="bar bar--sm visible-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-md-2">
+                <a href="{{ url_for('frontend_home') }}">
+                    <img class="logo logo-light" src="{{ url_for('static', filename='img/visafy-logo-white.png') }}">
+                    <img class="logo logo-dark" src="{{ url_for('static', filename='img/visafy-logo.png') }}">
+                </a>
+            </div>
+            <div class="col-9 col-md-10 text-right">
+                <a href="javascript:;" class="hamburger-toggle" id="main-burger">
+                    <i class="icon icon--sm stack-interface stack-menu"></i>
+                </a>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</div>
+<!--end bar-->
+<nav id="menu1" class="bar bar-1 bar--transparent bar--absolute" data-scroll-class="30vh:pos-fixed">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 text-center text-left-sm hidden-xs">
+                <div class="bar__module mb-0">
+                    <a href="{{ url_for('frontend_home') }}">
+                        <img class="logo logo-light"
+                             src="{{ url_for('static', filename='img/visafy-logo-white.png') }}">
+                        <img class="logo logo-dark" src="{{ url_for('static', filename='img/visafy-logo.png') }}">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-10 text-md-right">
+                <div class="bar__module m-0">
+                    <ul class="menu-horizontal text-left">
+                        <li>
+                            <a href="{{ url_for('frontend_home') }}">
+                                Home
+                            </a>
+                        </li>
+{#                        <li>#}
+{#                            <a href="{{ url_for('reviews') }}">#}
+{#                                Recensioni#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="{{ url_for('can_you_travel') }}">#}
+{#                                COVID-19#}
+{#                            </a>#}
+{#                        </li>#}
+                        <li>
+                            <a href="{{ url_for('frontend_contact') }}">
+                                Contacts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bar__module">
+                    <a class="btn btn--sm btn--white type--uppercase" href="javascript:;"
+                       onclick="openModal('#primary')">
+                            <span class="btn__text">
+                                Apply for a visa
+                            </span>
+                    </a>
+{#                    {% if request.endpoint != 'frontend_visa_page' or not country %}#}
+{#                        <a class="btn btn--sm btn--white type--uppercase" href="javascript:;"#}
+{#                           onclick="openModal('#primary')">#}
+{#                            <span class="btn__text">#}
+{#                                Richiedi un visto#}
+{#                            </span>#}
+{#                        </a>#}
+{#                    {% else %}#}
+{#                        <a class="btn btn--sm btn--white type--uppercase" href="javascript:;" onclick="{{ visa_onclick_cta(country.iso2, country.name, source='visa_page', cta='header', gclid=gclid, fbclid=fbclid, sid=sid) }}">#}
+{#                            <span class="btn__text">#}
+{#                                {% if country.name|length < 23 %}#}
+{#                                    Richiedi il visto {{ country.name }}#}
+{#                                {% else %}#}
+{#                                    Richiedi questo visto#}
+{#                                {% endif %}#}
+{#                            </span>#}
+{#                        </a>#}
+{#                    {% endif %}#}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

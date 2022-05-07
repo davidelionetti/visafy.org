@@ -1,0 +1,97 @@
+{#{% set reviews = [#}
+{#        ('Francesca Peli',#}
+{#         'Era la prima volta che mi rivolgevo a Visafy per un visto turistico Russo. Mi hanno seguito in tutto e sono sempre stati disponibili a rispondere alle mie innumerevoli domande da principiante del settore. I passaporti provvisto di visto sono in via di rientro e li riceverò tra 1/2 giorni. Un ringraziamento particolare ad Angelo.',#}
+{#         'https://www.google.com/maps/reviews/@40.887263,16.7603223,17z/data=!3m1!4b1!4m5!14m4!1m3!1m2!1s108551638531252580293!2s0x1347918a24922875:0x423b56495079c892?hl=it-IT',#}
+{#         'google'),#}
+{#        ('Fabiana Bertani',#}
+{#         'Ho contattato il Sig. Angelo di Visafy con urgenza perché mi avevano programmato un viaggio in Cina quasi imminente!! Sono rimasta veramente soddisfatta dalla serietà e cortesia, mi ha seguito ogni giorno per compilare il modulo on line e tutto il resto. Ho avuto il mio passaporto vistato nei tempi previsti... Lo raccomando vivamente',#}
+{#         'https://www.google.com/maps/reviews/@40.887263,16.7603223,17z/data=!3m1!4b1!4m5!14m4!1m3!1m2!1s114099101558473513233!2s0x1347918a24922875:0x423b56495079c892?hl=it-IT',#}
+{#         'google'),#}
+{#        ('Nicoletta Menzella',#}
+{#         'Ho richiesto il visto per due volte per la russia, la prima volta per pochi giorni e la seconda per un mese! sono pienamente soddisfatta del servizio ricevuto, gestito da personale altamente competente e disponibile che mi ha seguito passo dopo passo esaudendo ogni mia esigenza con professionalità e cordialità! consigliatissimo!',#}
+{#         'https://facebook.com//nicoletta.menzella.7/posts/10218473297171257', 'facebook'),#}
+{#        ('Iselin Ferrer',#}
+{#         'Eccellente sevizio. Super contenta. Appena mi sono messa in contatto con loro mi hanno fornito tutto il loro aiuto. Ho fatto tutto da casa, hanno mandato il corriere a prendere i documenti per la mia richiesta di visto turistico per Thailandia. Mi hanno tenuta al giorno di ogni dettaglio della riesta. Consiglio vivamente.',#}
+{#         'https://www.google.com/maps/reviews/@40.887263,16.7603223,17z/data=!3m1!4b1!4m5!14m4!1m3!1m2!1s116865990784897814981!2s0x1347918a24922875:0x423b56495079c892?hl=it-IT',#}
+{#         'google'),#}
+{#        ('Francesco Schito',#}
+{#         'Per conseguire un visto per la Russia mi sono affidato  a Visafy. Sono stato assistito in tutto con grande professionalit\u00e0, competenza e cortesia ottenendo il visto in tempi brevi. Consiglio a chiunque di rivolgersi a loro. Basta chiedere e lasciar fare e otterrete ci\u00f2 che vi serve. Grazie e alla prossima.',#}
+{#         'https://www.google.com/maps/reviews/@40.887263,16.7603223,17z/data=!3m1!4b1!4m5!14m4!1m3!1m2!1s115856619299610669220!2s0x1347918a24922875:0x423b56495079c892?hl=it-IT',#}
+{#         'google'),#}
+{#        ('Consuelo Dessena',#}
+{#         'Qualunque recensione non renderà abbastanza merito a Visafy e al lavoro meraviglioso che hanno fatto per me Angelo e i suoi collaboratori. Dopo mille telefonate senza Successo ad altre agenzie, Visafy è riuscita in 24 ore - si proprio in estrema urgenza - a farmi avere il visto per l estero. E tralascio i vari contrattempi che hanno arricchito questa avventura che ancora non è iniziata....Che dire... Unici veramente. Se tutto andrà buon fine Visafy e il mio corriere, mi avranno veramente salvato il viaggio. Velocità, competenza, attenzione, assistenza a 360 gradi, gentilezza, simpatia,... Straconsigliatissimi. Vi porto all\'estero con me.',#}
+{#         'https://facebook.com//consuelo.dessena/posts/2693935400643073', 'facebook'),#}
+{#    ] %}#}
+{% set bg = 'white' %}
+{#{% if not countries_partnership or country.iso2 not in countries_partnership %}#}
+{#    {% set bg = 'secondary' %}#}
+{#{% endif %}#}
+<section class="text-center unpad--bottom bg--{{ bg }}">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h2 class="mb-0">
+                    Our clients
+                </h2>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="space--xs bg--{{ bg }}" id="client-logos">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-4 text-center mx-auto">
+                <a href="http://www.agentsoftime.com/" target="_blank" rel="nofollow">
+                    <img src="{{ url_for('static', filename='img/Agents_Of_Time-350.png') }}"
+                         class="client-logo logo-white logo-high">
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 text-center mx-auto">
+                <a href="https://www.viviennewestwood.com/" target="_blank" rel="nofollow">
+                    <img src="{{ url_for('static', filename='img/Vivienne_Westwood-350.png') }}"
+                         class="client-logo logo-black pull-up">
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 text-center mx-auto">
+                <a href="https://www.predictcare.it/" target="_blank" rel="nofollow">
+                    <img src="{{ url_for('static', filename='img/Predict-350.png') }}" class="client-logo">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{#<section class="text-center space--sm bg--{{ bg }}" id="reviews">#}
+{#    <div class="container">#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-10 col-md-8">#}
+{#                <div class="slider" data-timing="7000" data-paging="true">#}
+{#                    <ul class="slides">#}
+{#                        {% for name, text, href, website in reviews %}#}
+{#                            <li>#}
+{#                                <blockquote class="px-4">#}
+{#                                    {{ text|truncate(350, end=' [...]') }}#}
+{#                                </blockquote>#}
+{#                                <h5 class="d-block m-0">#}
+{#                                    {{ name }}#}
+{#                                </h5>#}
+{#                                <span class="text-muted">su <a href="{{ href }}" target="_blank">#}
+{#                                    {{ website|title }}#}
+{#                                    </a>#}
+{#                                </span>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <!--end of row-->#}
+{#    </div>#}
+{#    <!--end of container-->#}
+{#</section>#}
+{#<section class="text-center space--xs bg--{{ bg }}">#}
+{#    <p class="lead">#}
+{#        <a class="no-decoration" href="{{ url_for('reviews') }}">Leggi tutte le recensioni</a>#}
+{#    </p>#}
+{#</section>#}

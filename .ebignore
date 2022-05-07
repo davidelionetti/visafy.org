@@ -1,0 +1,7 @@
+.flaskenv
+.gitignore
+.git
+.idea
+run.py
+/migrations/
+/venv/

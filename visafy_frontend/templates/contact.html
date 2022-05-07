@@ -1,0 +1,174 @@
+{% set no_index = True %}
+{% extends 'base.html' %}
+{% block structured_data %}
+    <script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","name":"Visafy","url":"https:\/\/visafy.it\/","logo":"{{ url_for('static', filename='img/visafy_logo_squared.png', _external=True) }}","address":{"@type":"PostalAddress","streetAddress":"Via Michele Viterbo, 9/A","addressLocality":"Cassano delle Murge","addressRegion":"BA","postalCode":"70020","addressCountry":"Italy"},"contactPoint":{"@type":"ContactPoint","contactType":"Supporto Clienti","telephone":"+393518943200","email":"info@visafy.it"}}</script>
+{% endblock %}
+{% block content %}
+    <section class="height-40 bg--primary">
+        <div class="container pos-vertical-center text-center">
+            <div class="row">
+                <div class="col-10 mx-auto">
+                    <h1 class="mx-auto mb-2">{{ title }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center space--xs bg--white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    {% set breadcrumbs = [
+                        (url_for('frontend_home'), 'Home'),
+                        ('#', title),
+                    ] %}
+                    {% include 'includes/breadcrumbs.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center bg--white unpad--top space--xs">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <h2>How to get in touch with {{ brand_text('span','h4 d-inline color--primary') }}</h2>
+{#                    <p class="lead">#}
+{#                        Siamo tutt'orecchie! Devi solo scegliere il canale che preferisci.#}
+{#                    </p>#}
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="text-center bg--white unpad--top">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <!--				<a class="no-decoration" href="javascript:;" onclick="openTypeform(window.typeform_call_id, {'cta': 'example', 'gclid': <?//= $gclid; ?>, 'nationality': 'YOUOI'}, 3500);">-->
+                    <a class="no-decoration" href="javascript:;"
+                       onclick="openTypeform('YKutV7P0', {'source': 'contact-page', 'sid': '{{ sid }}', 'gclid': '{{ gclid }}', 'fbclid': '{{ fbclid }}', 'topic': '',}, function() {return false;});">
+                        <div class="feature feature-3 boxed boxed--lg boxed--border contact">
+                            <i class="icon icon--lg icon-Phone-2 color--primary"></i>
+                            <h4 class="type--bold">Book a call</h4>
+                            <p class="mx-auto no-min-height font-weight-normal hidden-xs">
+                                Fancying good old calls? We've got you covered.
+{#                                <!--							Chiedi di essere richiamato/a il prima possibile oppure all'orario che pi&ugrave; ti fa comodo.-->#}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a class="no-decoration" href="javascript:;"
+                       onclick="openTypeform('tptUM2Po', {'source': 'contact-page', 'gclid': '{{ gclid }}', 'fbclid': '{{ fbclid }}'});">
+                        <div class="feature feature-3 boxed boxed--lg boxed--border contact">
+                            <i class="icon icon--lg icon-Speach-Bubbles color--primary"></i>
+                            <h4 class="type--bold">Drop us a line</h4>
+                            <p class="mx-auto no-min-height font-weight-normal hidden-xs">
+                                Let us know how we can help you.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center bg--secondary space-bottom--sm">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <h2 class="mb-0">Our departments</h2>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="bg--secondary unpad--top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="feature feature-3 mb-0 text-center boxed boxed--border border--round">
+                        <i class="icon icon--lg icon-Support color--primary"></i>
+                        <h4 class="type--bold">Support</h4>
+                        <p class="color--primary no-min-height">
+                            info@visafy.it
+                        </p>
+                    </div>
+                    <!--end feature-->
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="feature feature-3 mb-0 text-center boxed boxed--border border--round">
+                        <i class="icon icon--lg icon-Money-2 color--primary"></i>
+                        <h4 class="type--bold">Sales</h4>
+                        <p class="color--primary no-min-height">
+                            sales@visafy.it
+                        </p>
+                    </div>
+                    <!--end feature-->
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="feature feature-3 mb-0 text-center boxed boxed--border border--round">
+                        <i class="icon icon--lg icon-User color--primary"></i>
+                        <h4 class="type--bold">HR</h4>
+                        <p class="color--primary no-min-height">
+                            jobs@visafy.it
+                        </p>
+                    </div>
+                    <!--end feature-->
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="feature feature-3 mb-0 text-center boxed boxed--border border--round">
+                        <i class="icon icon--lg icon-Computer-3 color--primary"></i>
+                        <h4 class="type--bold">IT</h4>
+                        <p class="color--primary no-min-height">
+                            it@visafy.it
+                        </p>
+                    </div>
+                    <!--end feature-->
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="text-center space-bottom--sm">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Follow us on social media</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center unpad--top">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a href="https://www.linkedin.com/company/visafy/" target="_blank" rel="me">
+                        <div class="feature feature-3 mb-0 text-center">
+                            <i class="icon socicon-linkedin color--primary"></i>
+                            <h4>@visafy</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="https://www.facebook.com/visafy.it/" target="_blank" rel="me">
+                        <div class="feature feature-3 mb-0 text-center">
+                            <i class="icon socicon-facebook color--primary"></i>
+                            <h4>@visafy.it</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="https://instagram.com/visafy" target="_blank" rel="me">
+                        <div class="feature feature-3 mb-0 text-center">
+                            <i class="icon socicon-instagram color--primary"></i>
+                            <h4>@visafy</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--end of container-->
+    </section>
+{% endblock %}

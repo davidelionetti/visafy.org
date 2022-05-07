@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- EB: {{ config['IF_EB'] }} -->
+    <!-- Google Tag Manager -->
+{#    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':#}
+{#            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],#}
+{#        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=#}
+{#        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);#}
+{#    })(window,document,'script','dataLayer', 'GTM-{{ config['GTM_ID'] }}');</script>#}
+    <!-- End Google Tag Manager -->
+    <!-- Segment -->
+{#    <script>#}
+{#        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="luGZucBEcjNinhUus4AAQAJH4D5lKHKy";;analytics.SNIPPET_VERSION="4.15.3";#}
+{#            analytics.load("{{ config['SEGMENT_CLIENT_ID'] }}");#}
+{#        }}();#}
+{#    </script>#}
+    <!-- End Segment -->
+    <!-- Fullstory -->
+{#    <script>#}
+{#        window['_fs_debug'] = false;#}
+{#        window['_fs_host'] = 'fullstory.com';#}
+{#        window['_fs_script'] = 'edge.fullstory.com/s/fs.js';#}
+{#        window['_fs_org'] = '17B4C0';#}
+{#        window['_fs_namespace'] = 'FS';#}
+{#        (function(m,n,e,t,l,o,g,y){#}
+{#            if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}#}
+{#            g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];#}
+{#            o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;#}
+{#            y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);#}
+{#            g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};#}
+{#            g.anonymize=function(){g.identify(!!0)};#}
+{#            g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};#}
+{#            g.log = function(a,b){g("log",[a,b])};#}
+{#            g.consent=function(a){g("consent",!arguments.length||a)};#}
+{#            g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};#}
+{#            g.clearUserCookie=function(){};#}
+{#            g.setVars=function(n, p){g('setVars',[n,p]);};#}
+{#            g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];#}
+{#            if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};#}
+{#            g._v="1.3.0";#}
+{#        })(window,document,window['_fs_namespace'],'script','user');#}
+{#    </script>#}
+    <!-- End Fullstory -->
+    <!-- Hotjar -->
+{#    <script>#}
+{#        (function(h,o,t,j,a,r){#}
+{#            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};#}
+{#            h._hjSettings={hjid:{{ config['HOTJAR_TRACKING_ID'] }},hjsv:6};#}
+{#            a=o.getElementsByTagName('head')[0];#}
+{#            r=o.createElement('script');r.async=1;#}
+{#            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;#}
+{#            a.appendChild(r);#}
+{#        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');#}
+{#    </script>#}
+    <!-- End Hotjar -->
+    <meta charset="utf-8">
+    <title>{{ title }}{% if request.endpoint != 'frontend_home' %} | Visafy{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+{#    {% if no_index or if_remote_test or if_local %}#}
+{#        <meta name="robots" content="noindex,follow"/>#}
+{#    {% endif %}#}
+    <meta name="robots" content="noindex,follow"/>
+    <meta http-equiv="content-language" content="en-us">
+    {% if not if_local %}
+        <link rel="preconnect" href="https://{{ config['CDN_DOMAIN'] }}/" crossorigin>
+        {#            <link rel="preconnect" href="https://cdn.visafy.it/" crossorigin>#}
+    {% endif %}
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="{{ url_for('static', filename='img/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{{ url_for('static', filename='img/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="{{ url_for('static', filename='img/favicons/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{{ url_for('static', filename='img/favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='img/favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='img/favicons/safari-pinned-tab.svg') }}" color="#1478eb">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicons/favicon.ico') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="{{ url_for('static', filename='img/favicons/browserconfig.xml') }}">
+    <meta name="theme-color" content="#ffffff">
+    {#        <link href="{{ url_for('static', filename='css/spinner.css') }}" rel="stylesheet" type="text/css" media="all"/>#}
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="preload" href="{{ url_for('static', filename='css/assets.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}"></noscript>
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="{{ url_for('static', filename='css/assets.css') }}">
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='css/assets.css') }}"></noscript>
+    {% if if_local %}
+        <link href="{{ url_for('static', filename='css/theme.css') + '?' + now.strftime('%Y-%m-%d-%H-%M-%S') }}"
+              rel="stylesheet" type="text/css" media="all"/>
+    {% else %}
+        <link href="{{ url_for('static', filename='css/theme.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/stack-interface.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/stack-interface.woff2?33839631').replace('%3F', '?') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/iconsmind.woff') }}" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/socicon.ttf?a93r5t').replace('%3F', '?') }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ url_for('static', filename='fonts/socicon.ttf') }}" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Lato:400,300i,700|Quattrocento+Sans:700&display=swap">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300i,700|Quattrocento+Sans:700&display=swap">
+    </noscript>
+    {% if not meta_description %}
+        <meta name="description" content="Visafy - La prima agenzia per visti consolari interamente online. Grazie a 10 anni di esperienza nel settore dei visti consolari e una forte propensione all'innovazione, visafy è la scelta migliore che tu possa fare per il tuo visto consolare."/>
+        <meta property="og:description" content="Visafy - La prima agenzia per visti consolari interamente online. Grazie a 10 anni di esperienza nel settore dei visti consolari e una forte propensione all'innovazione, visafy è la scelta migliore che tu possa fare per il tuo visto consolare." />
+        <meta name="twitter:description" content="Visafy - La prima agenzia per visti consolari interamente online. Grazie a 10 anni di esperienza nel settore dei visti consolari e una forte propensione all'innovazione, visafy è la scelta migliore che tu possa fare per il tuo visto consolare." />
+    {% else %}
+        <meta name="description" content="{{ meta_description }}"/>
+        <meta property="og:description" content="{{ meta_description }}" />
+        <meta name="twitter:description" content="{{ meta_description }}" />
+    {% endif %}
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title }}{% if request.endpoint != 'frontend_home' %} | Visafy{% endif %}" />
+    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:site_name" content="Visafy" />
+    <meta property="og:image" content="{{ url_for('static', filename='img/Visafy-OG-Image.jpg') }}" />
+    <meta property="og:image:secure_url" content="{{ url_for('static', filename='img/Visafy-OG-Image.jpg') }}" />
+    <meta name="twitter:image" content="{{ url_for('static', filename='img/Visafy-OG-Image.jpg') }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title }}{% if request.endpoint != 'frontend_home' %} | Visafy{% endif %}" />
+    {% block structured_data %}
+    {% endblock %}
+    <!-- Start of Async Drift Code -->
+{#    <script>#}
+{#        "use strict";#}
+{##}
+{#        !function() {#}
+{#            var t = window.driftt = window.drift = window.driftt || [];#}
+{#            if (!t.init) {#}
+{#                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));#}
+{#                t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],#}
+{#                    t.factory = function(e) {#}
+{#                        return function() {#}
+{#                            var n = Array.prototype.slice.call(arguments);#}
+{#                            return n.unshift(e), t.push(n), t;#}
+{#                        };#}
+{#                    }, t.methods.forEach(function(e) {#}
+{#                    t[e] = t.factory(e);#}
+{#                }), t.load = function(t) {#}
+{#                    var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");#}
+{#                    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";#}
+{#                    var i = document.getElementsByTagName("script")[0];#}
+{#                    i.parentNode.insertBefore(o, i);#}
+{#                };#}
+{#            }#}
+{#        }();#}
+{#        drift.SNIPPET_VERSION = '0.3.1';#}
+{#        {% if not no_drift %}#}
+{#            drift.load('7w29wte7wega');#}
+{#            var drift_welcome_message = {% if request.endpoint != 'frontend_visa_page' %} "Ciao! Come possiamo aiutarti oggi?" {% else %} {{ ("Ciao! Come possiamo aiutarti per il tuo visto " + country_name+"?")|tojson }} {% endif %};#}
+{#            drift.on('ready',function(api, payload) {#}
+{#                if(!window.drift_welcome_message_shown) {#}
+{#                    setTimeout(function () {#}
+{#                        if(window.open_tf === null) {#}
+{#                            if (drift_welcome_message) {#}
+{#                                api.showWelcomeMessage(drift_welcome_message);#}
+{#                            } else {#}
+{#                                api.showWelcomeMessage();#}
+{#                            }#}
+{#                        }#}
+{#                    }, 5000);#}
+{#                }#}
+{#            })#}
+{#        {% endif %}#}
+        {#            {% if not no_drift %}#}
+        {#                window.if_drift = true;#}
+        {#                var sid = '{{ sid }}';#}
+        {#                var drift_welcome_message = {% if request.endpoint != 'frontend_visa_page' %} "Ciao! Come possiamo aiutarti oggi?" {% else %} {{ ("Ciao! Come possiamo aiutarti per il tuo visto " + country_name+"?")|tojson }} {% endif %};#}
+        {#            {% else %}#}
+        {#                window.if_drift = false;#}
+        {#            {% endif %}#}
+{#    </script>#}
+    <!-- End of Async Drift Code -->
+</head>
+<body class="{{ body_class }}">
+<!-- Google Tag Manager (noscript) -->
+{#<noscript>#}
+{#    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-{{ config['GTM_ID'] }}"#}
+{#            height="0" width="0" style="display:none;visibility:hidden"></iframe>#}
+{#</noscript>#}
+<!-- End Google Tag Manager (noscript) -->
+<a id="start"></a>
+{#        <div class="spinner-container bg--primary">#}
+{#            <div class="inner-spinner">#}
+{#                <img class="logo-big"#}
+{#                     src="{{ url_for('static', filename='img/visafy-logo-white.png') }}"#}
+{#                     alt="Visafy Logo">#}
+{#                <div class="spinner mx-auto">#}
+{#                    <div class="bounce1 bg--white"></div>#}
+{#                    <div class="bounce2 bg--white"></div>#}
+{#                    <div class="bounce3 bg--white"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+<div class="nav-container " data-scroll-class="10vh:nav-scroll">
+    {% include 'includes/navbar.html' %}
+</div>
+<div class="main-container">
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="space--xs bg--primary text-center-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-0">
+                    <img src="{{ url_for('static', filename='img/visafy-logo-white.png') }}" alt="Visafy Logo"
+                         class="logo h6">
+                </div>
+            </div>
+            <div class="row mt-5 text-center-xs">
+                <div class="col-md-8 mb-4 mb-sm-0">
+                        <span class="type--fine-print d-block d-md-inline mb-3 mb-md-0">©
+                                                        <span class="update-year">2022</span> Visafy</span>
+                </div>
+                <div class="col-md-4 text-right text-center-xs mb-0">
+                    <ul class="social-list list-inline list--hover text-center-xs m-0">
+                        <li>
+                            <a href="https://www.facebook.com/visafy.it/" target="_blank" rel="me">
+                                <i class="socicon socicon-facebook icon icon--xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/visafy/" target="_blank" rel="me">
+                                <i class="socicon socicon-linkedin icon icon--xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/visafy" target="_blank" rel="me">
+                                <i class="socicon socicon-instagram icon icon--xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </footer>
+
+    {% if not country %}
+        <div class="modal-container height-60" id="primary">
+            <div class="modal-content animated height-60">
+                <section class="imageblock feature-large bg--site border--round height-60">
+                    <div class="imageblock__content col-lg-5 col-md-4 pos-left hidden-xs">
+                        <div class="background-image-holder">
+                            <img src="{{ url_for('static', filename='img/valigia-viaggio-540.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="container more-padding-sm right pos-vertical-center">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-7 col-md-8">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10 col-md-11">
+                                        <h4 class="h2 mb-2">Suitcases ready?</h4>
+                                        <p class="lead">Search for your destination country here below.</p>
+                                        {{ typeahead('typeaheadEnCountry', 'states','Try with "United States"','') }}
+                                    </div>
+                                </div>
+                                <!--end of row-->
+                            </div>
+                        </div>
+                        <!--end of row-->
+                    </div>
+                    <!--end of container-->
+                </section>
+                <div class="modal-close modal-close-cross"></div>
+            </div>
+        </div>
+    {% endif %}
+
+{#    {% if not no_banner and 'cookie_consent' not in request.cookies %}#}
+{#        <div id="cookies-banner" class="notification bg--primary pos-bottom col-12 space--xlg notification--reveal" data-animation="from-bottom" data-autoshow="10">#}
+{#            <section class="space--xxs">#}
+{#                <div class="container">#}
+{#                    <div class="row">#}
+{#                        <div class="col-10 mx-auto color--white">#}
+{#                            Questo sito fa uso di cookie. Proseguendo la navigazione dichiari di accettare l’utilizzo di cookie come descritto nella <a href="{{ url_for('cookie_policy') }}">cookie policy</a>.#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </section>#}
+{#            <div class="notification-close-cross notification-close"></div>#}
+{#        </div>#}
+{#    {% endif %}#}
+
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+
+{% block js_plugins %}
+{% endblock %}
+<script src="{{ url_for('static', filename='js/assets.js') }}"></script>
+<script src="{{ url_for('static', filename='js/typeform_embed.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
+
+<script type="text/javascript">
+    window.original_url = {{ request.url|tojson }};
+    window.internal_id = '{{ internal_id }}';
+    window.sid = '{{ sid }}';
+    window.initial_source = '{{ initial_source }}';
+    window.typeform_quote_1_id = '{{ config['TF_QUOTE_1_ID'] }}';
+    window.typeform_quote_2_id = '{{ config['TF_QUOTE_2_ID'] }}';
+    window.typeform_call_id = '{{ config['TF_QUOTE_CALL_ID'] }}';
+    window.typeform_message_id = '{{ config['TF_QUOTE_MESSAGE_ID'] }}';
+    window.request_sent_path = '';
+    //{#window.request_sent_path = '{{ url_for('thank_you_page') }}';#}
+    window.open_tf = null;
+    window.if_en = true;
+</script>
+
+<script src="{{ url_for('static', filename='js/custom.min.js') }}"></script>
+
+{% block custom_js %}
+{% endblock %}
+
+</body>
+</html>

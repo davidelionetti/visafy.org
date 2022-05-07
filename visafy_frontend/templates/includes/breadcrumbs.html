@@ -1,0 +1,31 @@
+<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="custom_breadcrumbs">
+    {% if breadcrumbs[0][1] == 'Home' %}
+        <li>
+            <a href="{{ breadcrumbs[0][0] }}">
+                Home
+            </a>
+        </li>
+        {% do breadcrumbs.pop(0) %}
+        >
+    {% endif %}
+    {% for href, name in breadcrumbs %}
+        {% if loop.index != breadcrumbs|length %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="{{ href }}">
+                <span itemprop="name">
+                    {{ name }}
+                </span>
+                </a>
+                <meta itemprop="position" content="{{ loop.index }}"/>
+            </li>
+            >
+        {% else %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">
+                    <strong>{{ name }}</strong>
+                </span>
+                <meta itemprop="position" content="{{ loop.index }}"/>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ol>
