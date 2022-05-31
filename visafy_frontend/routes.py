@@ -64,6 +64,11 @@ def frontend_home():
 def frontend_contact():
     return render_template('contact.html', title='Contacts')
 
+
+@app.route('/demo')
+def demo():
+    return redirect('https://drive.google.com/drive/u/0/folders/1B0RyHEtlhOjxSqpTiHomK5fWEK5c-8H-')
+
 # # # Error pages
 
 @app.errorhandler(404)
