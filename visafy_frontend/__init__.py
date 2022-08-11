@@ -23,5 +23,4 @@ app.config['CDN_TIMESTAMP'] = False
 
 CDN(app)
 
-
 from visafy_frontend import routes
